@@ -1,24 +1,23 @@
-<?php
-session_start();
-include "database.php";
+<div class="card">
 
-$user_id = $_SESSION['user_id'];
-$result = $conn->query("SELECT * FROM users WHERE id=$user_id");
-$user = $result->fetch_assoc();
-?>
+<h2>User Profile</h2>
 
-<link rel="stylesheet" href="style.css">
 
-<div class="container">
-    <div class="card">
-        <h2>Profile</h2>
+<p><strong>Username:</strong> <?= htmlspecialchars($user['username']) ?></p>
+<p><strong>Full Name:</strong> <?= htmlspecialchars($user['full_name']) ?></p>
+<p><strong>Bio:</strong> <?= htmlspecialchars($user['bio'] ?? 'No bio yet') ?></p>
 
-        <img src="uploads/<?php echo $user['profile_image']; ?>" width="120" class="profile-img">
+<br>
+<h3>Your Posts</h3>
 
-        <p><b>Username:</b> <?php echo $user['username']; ?></p>
-        <p><b>Full Name:</b> <?php echo $user['fullname']; ?></p>
-        <p><b>Bio:</b> <?php echo $user['bio']; ?></p>
+<?php while($p = $posts->fetch_assoc()){ ?>
+<div class="card">
+<?= htmlspecialchars($p['content']) ?>
+</div>
+<?php } ?>
 
-        <a href="edit_profile.php">Edit Profile</a>
-    </div>
+<a href="?">Back to Feed</a> |
+<a href="?page=profile/edit">Edit Profile</a> |
+<a href="?page=logout">Logout</a>
+
 </div>

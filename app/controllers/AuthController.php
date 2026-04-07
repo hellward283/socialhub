@@ -31,8 +31,15 @@ class AuthController {
                 $_POST['fullname']
             );
             header("Location: ?page=login");
+            exit;
         }
 
         require "../app/views/auth/register.php";
+    }
+
+    function logout(){
+        session_destroy();
+        header("Location: ?page=login");
+        exit;
     }
 }

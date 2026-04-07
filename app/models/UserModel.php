@@ -1,7 +1,11 @@
 <?php
 class UserModel {
+
     private $conn;
-    function __construct($conn){ $this->conn = $conn; }
+
+    function __construct($conn){
+        $this->conn = $conn;
+    }
 
     function findByUsername($username){
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE username=?");
@@ -15,4 +19,5 @@ class UserModel {
         $stmt->bind_param("sss",$username,$password,$fullname);
         return $stmt->execute();
     }
+
 }

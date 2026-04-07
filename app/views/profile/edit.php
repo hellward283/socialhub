@@ -1,26 +1,20 @@
-<?php
-session_start();
-include "database.php";
-
-$user_id = $_SESSION['user_id'];
-
-$result = $conn->query("SELECT * FROM users WHERE id=$user_id");
-$user = $result->fetch_assoc();
-?>
+<div class="card">
 
 <h2>Edit Profile</h2>
 
-<form action="update_profile.php" method="POST" enctype="multipart/form-data">
+<form method="POST" action="index.php?page=profile/update" enctype="multipart/form-data">
 
-Full Name<br>
-<input type="text" name="fullname" value="<?php echo $user['fullname']; ?>"><br><br>
+<label>Full Name</label>
+<input type="text" name="fullname" value="<?= $user['fullname'] ?? '' ?>">
 
-Bio<br>
-<textarea name="bio"><?php echo $user['bio']; ?></textarea><br><br>
+<label>Bio</label>
+<textarea name="bio"><?= $user['bio'] ?? '' ?></textarea>
 
-Profile Image<br>
-<input type="file" name="image"><br><br>
+<label>Profile Picture</label>
+<input type="file" name="profile_pic">
 
 <button type="submit">Update</button>
 
 </form>
+
+</div>

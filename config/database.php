@@ -1,16 +1,7 @@
 <?php
-
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "socialhub";
-
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = new mysqli("localhost", "root", "", "socialhub");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$conn->set_charset("utf8mb4");
-
 ?>

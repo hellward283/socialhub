@@ -1,0 +1,123 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body{
+background:#f0f2f5;
+}
+
+/* LOGIN / REGISTER CENTER */
+.container{
+width:400px;
+margin:100px auto;
+}
+
+/* FEED WIDTH */
+.feed-container{
+width:600px;
+margin:40px auto;
+}
+
+/* CARD */
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+/* TITLE */
+.title{
+text-align:center;
+font-size:26px;
+font-weight:bold;
+color:#2e7d32;
+margin-bottom:20px;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.navbar a{
+text-decoration:none;
+font-weight:bold;
+color:#2e7d32;
+}
+
+/* INPUTS */
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:12px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+/* BUTTON */
+button{
+padding:10px;
+border:none;
+border-radius:6px;
+background:#2e7d32;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+/* SECOND BUTTON */
+.secondary{
+background:#fbc02d;
+color:black;
+margin-top:10px;
+}
+
+.secondary:hover{
+background:#f9a825;
+}
+
+/* POST */
+.post{
+font-size:15px;
+margin-bottom:10px;
+}
+
+/* COMMENT */
+.comment{
+background:#f1f3f6;
+padding:8px;
+border-radius:6px;
+margin-top:6px;
+font-size:14px;
+}
+
+/* LIKE BUTTON */
+.like-btn{
+background:none;
+color:#555;
+border:none;
+cursor:pointer;
+font-size:14px;
+}
+
+.like-btn:hover{
+color:#2e7d32;
+}
